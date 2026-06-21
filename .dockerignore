@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.env
+reports/
+media_uploads/*
+social_*.json
+mobile-app/node_modules/
+mobile-app/.expo/
+mobile-app/dist/

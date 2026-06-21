@@ -1,0 +1,48 @@
+{
+  "expo": {
+    "name": "今日のマーケット",
+    "slug": "morning-market-column",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#111827"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.haruki.morningmarket",
+      "infoPlist": {
+        "NSCameraUsageDescription": "投稿に写真や動画を添付するためにカメラを使用します。",
+        "NSPhotoLibraryUsageDescription": "投稿に写真や動画を添付するために写真ライブラリを使用します。",
+        "NSPhotoLibraryAddUsageDescription": "画像や動画を保存する場合に写真ライブラリへの追加を使用します。",
+        "NSMicrophoneUsageDescription": "動画を撮影して投稿する場合にマイクを使用します。"
+      }
+    },
+    "android": {
+      "package": "com.haruki.morningmarket",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#111827"
+      },
+      "permissions": [
+        "CAMERA",
+        "RECORD_AUDIO",
+        "READ_MEDIA_IMAGES",
+        "READ_MEDIA_VIDEO",
+        "READ_EXTERNAL_STORAGE"
+      ]
+    },
+    "extra": {
+      "webAppUrl": "http://127.0.0.1:8000",
+      "eas": {
+        "projectId": "00000000-0000-0000-0000-000000000000"
+      }
+    }
+  }
+}

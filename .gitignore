@@ -1,0 +1,13 @@
+.env
+mobile-app/.env
+__pycache__/
+app/__pycache__/
+node_modules/
+mobile-app/node_modules/
+reports/
+media_uploads/
+social_users.json
+social_sessions.json
+social_posts.json
+social_reports.json
+*.pyc
