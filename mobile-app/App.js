@@ -4,7 +4,7 @@ import Constants from 'expo-constants';
 import { StatusBar } from 'expo-status-bar';
 import { WebView } from 'react-native-webview';
 
-const DEFAULT_URL = 'http://127.0.0.1:8000';
+const DEFAULT_URL = 'https://morning-market-app.onrender.com';
 
 function normalizeUrl(url) {
   if (!url) return DEFAULT_URL;
@@ -74,9 +74,11 @@ export default function App() {
             <Text style={styles.loadingText}>読み込み中...</Text>
           </View>
         )}
-        onError={() => setHasError(true)}
+        onError={(event) => {
+          console.log('WebView error', event.nativeEvent);
+        }}
         onHttpError={(event) => {
-          if (event?.nativeEvent?.statusCode >= 500) setHasError(true);
+          console.log('WebView http error', event.nativeEvent);
         }}
         onShouldStartLoadWithRequest={(request) => {
           const url = request?.url || '';

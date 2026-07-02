@@ -21,7 +21,8 @@
         "NSCameraUsageDescription": "投稿に写真や動画を添付するためにカメラを使用します。",
         "NSPhotoLibraryUsageDescription": "投稿に写真や動画を添付するために写真ライブラリを使用します。",
         "NSPhotoLibraryAddUsageDescription": "画像や動画を保存する場合に写真ライブラリへの追加を使用します。",
-        "NSMicrophoneUsageDescription": "動画を撮影して投稿する場合にマイクを使用します。"
+        "NSMicrophoneUsageDescription": "動画を撮影して投稿する場合にマイクを使用します。",
+        "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
@@ -39,10 +40,11 @@
       ]
     },
     "extra": {
-      "webAppUrl": "http://127.0.0.1:8000",
+      "webAppUrl": "https://morning-market-app.onrender.com",
       "eas": {
-        "projectId": "00000000-0000-0000-0000-000000000000"
+        "projectId": "cf70654a-3cac-4074-a8f3-e519cd2fdf18"
       }
-    }
+    },
+    "owner": "haruki0516"
   }
 }
