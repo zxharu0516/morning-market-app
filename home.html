@@ -243,6 +243,18 @@
         max-width: 100%;
       }
     }
+
+    #column,.column-content{
+      width:100%!important;
+      max-width:100%!important;
+      min-width:0!important;
+      overflow-wrap:anywhere!important;
+      word-break:break-word!important;
+      white-space:pre-wrap!important;
+      overflow-x:hidden!important;
+      display:block!important;
+    }
+
 </style>
 </head>
 <body>
@@ -489,7 +501,7 @@
         const root = $('column');
         if (!root) return;
         root.innerHTML = '';
-        const box = document.createElement('div');
+        const box = document.createElement('pre');
         box.className = 'column-content';
         box.textContent = text || 'なし';
         root.appendChild(box);
