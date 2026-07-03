@@ -168,6 +168,19 @@ pre, code, textarea {
   .card {
     padding: 16px;
   }
+.card,
+.card *,
+pre,
+pre *,
+code,
+.muted,
+#column,
+#result {
+  max-width: 100%;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
 }
   </style>
 </head>
@@ -186,7 +199,7 @@ pre, code, textarea {
   <main>
     <section id="homeSection" class="section active">
       <div class="grid">
-        <div class="card"><h2>今日の金融コラム</h2><pre id="column">ここにコラムが表示されます。</pre></div>
+        <div class="card"><h2>今日の金融コラム</h2><div id="column"></div>
         <div class="card"><h2>重要ポイント3つ</h2><div id="points" class="points-list">ここに重要ポイントが表示されます。</div></div>
         <div class="card"><h2>確認問題10問</h2><div id="quiz">ここに問題が表示されます。</div></div>
       </div>
