@@ -115,138 +115,135 @@
     details { border:1px solid var(--line); border-radius:14px; padding:12px 14px; background:#fff; }
     summary { cursor:pointer; font-weight:900; }
     @media (max-width: 760px) { .two, .auth-grid { grid-template-columns: 1fr; } body { padding-inline: 12px; } .bottom-nav { grid-template-columns: repeat(3, 1fr); } .nav-btn { font-size:11px; padding-inline:2px; } }
-    html, body {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-}
 
-main, section, .card, .hero {
-  max-width: 100%;
-  box-sizing: border-box;
-}
+    /* ===== Mobile responsive fix ===== */
+    html {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
 
-pre, code, textarea {
-  max-width: 100%;
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-  word-break: break-word;
-}
+    body {
+      width: 100%;
+      max-width: 980px;
+      overflow-x: hidden;
+    }
 
-@media (max-width: 760px) {
-  body {
-    padding: 12px 10px 86px;
-  }
+    main,
+    section,
+    .grid,
+    .card,
+    .hero,
+    #column,
+    #points,
+    #quiz {
+      max-width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+    }
 
-  .hero {
-    width: 100%;
-    padding: 24px 18px;
-  }
+    .grid,
+    .two,
+    .auth-grid {
+      min-width: 0;
+    }
 
-  .hero h1 {
-    font-size: 26px;
-  }
+    .card {
+      overflow-x: hidden;
+    }
 
-  .hero p {
-    font-size: 15px;
-  }
+    #column,
+    .column-content,
+    .post-text,
+    .comment-text,
+    .legal-box,
+    pre,
+    code {
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      overflow-x: hidden;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      box-sizing: border-box;
+    }
 
-  .actions {
-    flex-wrap: wrap;
-  }
+    .column-content {
+      display: block;
+      font-size: 15px;
+      line-height: 1.8;
+    }
 
-  button {
-    font-size: 14px;
-    padding: 11px 14px;
-  }
+    pre {
+      overflow-x: hidden;
+    }
 
-  .grid,
-  .two {
-    grid-template-columns: 1fr;
-  }
+    @media (max-width: 760px) {
+      body {
+        max-width: 100%;
+        margin: 0;
+        padding: 12px 10px 86px;
+      }
 
-  .card {
-    padding: 16px;
-  }
-.card,
-.card *,
-pre,
-pre *,
-code,
-.muted,
-#column,
-#result {
-  max-width: 100%;
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-  word-break: break-word;
-}
-#column {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-  white-space: normal;
-  overflow-wrap: anywhere;
-  word-break: break-word;
-  font-size: 15px;
-  line-height: 1.8;
-}
+      h1 {
+        font-size: 26px;
+        line-height: 1.25;
+      }
 
-#column * {
-  max-width: 100%;
-  overflow-wrap: anywhere;
-  word-break: break-word;
-}
+      h2 {
+        font-size: 20px;
+        line-height: 1.35;
+      }
 
-@media (max-width: 760px) {
-  #column {
-    font-size: 14px;
-    line-height: 1.75;
-  }
-  #homeSection,
-#homeSection .grid,
-#homeSection .card {
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-  overflow-x: hidden;
-}
+      .hero {
+        width: 100%;
+        padding: 24px 18px;
+        border-radius: 20px;
+      }
 
-#column {
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-  overflow-x: hidden;
-  white-space: pre-wrap;
-  overflow-wrap: break-word;
-  word-break: break-all;
-}
-main {
-  width: 100vw;
-  max-width: 100vw;
-  overflow-x: hidden;
-}
+      .hero p {
+        font-size: 15px;
+      }
 
-.grid,
-.card {
-  min-width: 0 !important;
-  overflow-x: hidden !important;
-}
+      .actions,
+      .post-toolbar,
+      .profile-actions,
+      .owner-actions,
+      .post-actions-row,
+      .filter-group {
+        flex-wrap: wrap;
+      }
 
-#column {
-  display: block !important;
-  width: calc(100vw - 72px) !important;
-  max-width: calc(100vw - 72px) !important;
-  min-width: 0 !important;
-  overflow-x: hidden !important;
-  white-space: pre-wrap !important;
-  word-break: break-all !important;
-  overflow-wrap: anywhere !important;
-  font-size: 14px !important;
-  line-height: 1.75 !important;
-}
-  </style>
+      button {
+        font-size: 14px;
+        padding: 11px 14px;
+      }
+
+      .grid,
+      .two,
+      .auth-grid,
+      .post-media-grid,
+      .post-media-grid.one {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .card {
+        padding: 16px;
+      }
+
+      .column-content {
+        font-size: 14px;
+        line-height: 1.75;
+      }
+
+      .bottom-nav {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+</style>
 </head>
 <body>
   <div class="hero">
@@ -263,7 +260,7 @@ main {
   <main>
     <section id="homeSection" class="section active">
       <div class="grid">
-        <div class="card"><h2>今日の金融コラム</h2><div id="column"></div>
+        <div class="card"><h2>今日の金融コラム</h2><div id="column"></div></div>
         <div class="card"><h2>重要ポイント3つ</h2><div id="points" class="points-list">ここに重要ポイントが表示されます。</div></div>
         <div class="card"><h2>確認問題10問</h2><div id="quiz">ここに問題が表示されます。</div></div>
       </div>
@@ -488,6 +485,16 @@ main {
         if (el) el.textContent = text;
       }
 
+      function renderColumn(text) {
+        const root = $('column');
+        if (!root) return;
+        root.innerHTML = '';
+        const box = document.createElement('div');
+        box.className = 'column-content';
+        box.textContent = text || 'なし';
+        root.appendChild(box);
+      }
+
       function clearNode(node) {
         if (!node) return;
         while (node.firstChild) node.removeChild(node.firstChild);
@@ -625,14 +632,14 @@ main {
       async function loadReport(save=false) {
         setLoading(true);
         setStatus('生成中… ニュース取得→市場データ→コラム→重要ポイント→確認問題');
-        setText('column', '生成中…');
+        renderColumn('生成中…');
         renderPoints('生成中…');
         const quizRoot = $('quiz');
         if (quizRoot) quizRoot.textContent = '生成中…';
         await sleepFrame();
         try {
           const data = await fetchJson('/api/report?save=' + (save ? 'true' : 'false') + '&t=' + Date.now());
-          setText('column', data.column || 'なし');
+          renderColumn(data.column || 'なし');
           renderPoints(data.points || 'なし');
           renderQuiz(data.quiz_items, data.quiz || 'なし');
           setStatus('生成完了！', 'done');
@@ -649,12 +656,12 @@ main {
       async function loadColumn() {
         setLoading(true);
         setStatus('コラム生成中…');
-        setText('column', '生成中…');
+        renderColumn('生成中…');
         renderPoints('生成中…');
         await sleepFrame();
         try {
           const data = await fetchJson('/api/column?t=' + Date.now());
-          setText('column', data.column || 'なし');
+          renderColumn(data.column || 'なし');
           renderPoints(data.points || 'なし');
           setStatus('生成完了！', 'done');
           clearStatusSoon();
