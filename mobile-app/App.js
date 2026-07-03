@@ -56,37 +56,50 @@ export default function App() {
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar style="light" />
-      <WebView
-        key={webKey}
-        source={{ uri: webAppUrl }}
-        style={styles.webview}
-        javaScriptEnabled
-        domStorageEnabled
-        sharedCookiesEnabled
-        thirdPartyCookiesEnabled
-        allowsInlineMediaPlayback
-        mediaPlaybackRequiresUserAction={false}
-        pullToRefreshEnabled={Platform.OS === 'android'}
-        startInLoadingState
-        renderLoading={() => (
-          <View style={styles.loading}>
-            <ActivityIndicator size="large" />
-            <Text style={styles.loadingText}>読み込み中...</Text>
-          </View>
-        )}
-        onError={(event) => {
-          console.log('WebView error', event.nativeEvent);
-        }}
-        onHttpError={(event) => {
-          console.log('WebView http error', event.nativeEvent);
-        }}
-        onShouldStartLoadWithRequest={(request) => {
-          const url = request?.url || '';
-          if (canOpenInsideApp(url)) return true;
-          Linking.openURL(url).catch(() => {});
-          return false;
-        }}
-      />
+<WebView
+  key={webKey}
+  source={{ uri: webAppUrl }}
+  style={styles.webview}
+  javaScriptEnabled
+  domStorageEnabled
+  sharedCookiesEnabled
+  thirdPartyCookiesEnabled
+  allowsInlineMediaPlayback
+  mediaPlaybackRequiresUserAction={false}
+  pullToRefreshEnabled={Platform.OS === 'android'}
+  scalesPageToFit={false}
+  injectedJavaScriptBeforeContentLoaded={`
+    const existing = document.querySelector('meta[name="viewport"]');
+    if (existing) {
+      existing.setAttribute('content', 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no');
+    } else {
+      const meta = document.createElement('meta');
+      meta.setAttribute('name', 'viewport');
+      meta.setAttribute('content', 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no');
+      document.head.appendChild(meta);
+    }
+    true;
+  `}
+  startInLoadingState
+  renderLoading={() => (
+    <View style={styles.loading}>
+      <ActivityIndicator size="large" />
+      <Text style={styles.loadingText}>読み込み中...</Text>
+    </View>
+  )}
+  onError={(event) => {
+    console.log('WebView error', event.nativeEvent);
+  }}
+  onHttpError={(event) => {
+    console.log('WebView http error', event.nativeEvent);
+  }}
+  onShouldStartLoadWithRequest={(request) => {
+    const url = request?.url || '';
+    if (canOpenInsideApp(url)) return true;
+    Linking.openURL(url).catch(() => {});
+    return false;
+  }}
+/>
     </SafeAreaView>
   );
 }

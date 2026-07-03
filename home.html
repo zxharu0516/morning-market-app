@@ -115,6 +115,60 @@
     details { border:1px solid var(--line); border-radius:14px; padding:12px 14px; background:#fff; }
     summary { cursor:pointer; font-weight:900; }
     @media (max-width: 760px) { .two, .auth-grid { grid-template-columns: 1fr; } body { padding-inline: 12px; } .bottom-nav { grid-template-columns: repeat(3, 1fr); } .nav-btn { font-size:11px; padding-inline:2px; } }
+    html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+main, section, .card, .hero {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+pre, code, textarea {
+  max-width: 100%;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+@media (max-width: 760px) {
+  body {
+    padding: 12px 10px 86px;
+  }
+
+  .hero {
+    width: 100%;
+    padding: 24px 18px;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .actions {
+    flex-wrap: wrap;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 11px 14px;
+  }
+
+  .grid,
+  .two {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 16px;
+  }
+}
   </style>
 </head>
 <body>
