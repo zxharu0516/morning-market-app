@@ -181,6 +181,29 @@ code,
   overflow-wrap: anywhere;
   word-break: break-word;
 }
+#column {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+#column * {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+@media (max-width: 760px) {
+  #column {
+    font-size: 14px;
+    line-height: 1.75;
+  }
 }
   </style>
 </head>
