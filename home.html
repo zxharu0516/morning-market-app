@@ -222,6 +222,30 @@ code,
   overflow-wrap: break-word;
   word-break: break-all;
 }
+main {
+  width: 100vw;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.grid,
+.card {
+  min-width: 0 !important;
+  overflow-x: hidden !important;
+}
+
+#column {
+  display: block !important;
+  width: calc(100vw - 72px) !important;
+  max-width: calc(100vw - 72px) !important;
+  min-width: 0 !important;
+  overflow-x: hidden !important;
+  white-space: pre-wrap !important;
+  word-break: break-all !important;
+  overflow-wrap: anywhere !important;
+  font-size: 14px !important;
+  line-height: 1.75 !important;
+}
   </style>
 </head>
 <body>
